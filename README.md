@@ -6,7 +6,7 @@ The steps in this document assume that you have access to an OpenShift deploymen
 
 ## What has been done for you
 
-This is a minimal Django 1.8 project. It was created with these steps:
+This is a minimal Django 1.11 project. It was created with these steps:
 
 1. Create a virtualenv
 2. Manually install Django and other dependencies
@@ -54,7 +54,7 @@ To run this project in your development machine, follow these steps:
 
 2. Fork this repo and clone your fork:
 
-    `git clone https://github.com/openshift/django-ex.git`
+    `git clone https://github.com/Diavolo/django-openshift.git`
 
 3. Install dependencies:
 
@@ -115,14 +115,14 @@ Templates give you full control of each component of your application.
 Sometimes your application is simple enough and you don't want to bother with templates. In that case, you can let OpenShift inspect your source code and create the required components automatically for you:
 
 ```bash
-$ oc new-app centos/python-35-centos7~https://github.com/openshift/django-ex
+$ oc new-app centos/python-35-centos7~https://github.com/Diavolo/django-openshift
 imageStreams/python-35-centos7
-imageStreams/django-ex
-buildConfigs/django-ex
-deploymentConfigs/django-ex
-services/django-ex
-A build was created - you can run `oc start-build django-ex` to start it.
-Service "django-ex" created at 172.30.16.213 with port mappings 8080.
+imageStreams/django-openshift
+buildConfigs/django-openshift
+deploymentConfigs/django-openshift
+services/django-openshift
+A build was created - you can run `oc start-build django-openshift` to start it.
+Service "django-openshift" created at 172.30.16.213 with port mappings 8080.
 ```
 
 You can access your application by browsing to the service's IP address and port.
@@ -147,7 +147,7 @@ You can fine tune the gunicorn configuration through the environment variable `A
 
 ### DJANGO_SECRET_KEY
 
-When using one of the templates provided in this repository, this environment variable has its value automatically generated. For security purposes, make sure to set this to a random string as documented [here](https://docs.djangoproject.com/en/1.8/ref/settings/#std:setting-SECRET_KEY).
+When using one of the templates provided in this repository, this environment variable has its value automatically generated. For security purposes, make sure to set this to a random string as documented [here](https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-SECRET_KEY).
 
 
 ## One-off command execution

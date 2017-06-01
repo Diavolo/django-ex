@@ -6,6 +6,6 @@ from .models import PageView
 
 
 class PageViewAdmin(admin.ModelAdmin):
-    list_display = ['hostname', 'timestamp']
+    list_display = ('hostname', 'timestamp')
 
 admin.site.register(PageView, PageViewAdmin)
